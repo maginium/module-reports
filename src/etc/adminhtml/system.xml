@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Hides the "mst_reports" section from all scopes -->
+        <section id="mst_reports" showInDefault="0" showInStore="0" showInWebsite="0" />
+
+        <!-- Configures the "reports" section -->
+        <section id="reports" showInDefault="0" showInStore="0" showInWebsite="0" sortOrder="1150" translate="label">
+            <!-- Sets the label for the "reports" section -->
+            <label>Advanced Reporting</label>
+        </section>
+    </system>
+</config>

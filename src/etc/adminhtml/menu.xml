@@ -1,0 +1,449 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <remove id="Magento_Reports::report_products" />
+        <remove id="Magento_Reports::report_marketing" />
+        <remove id="Magento_Reports::report_salesroot" />
+        <remove id="Magento_Reports::report_customers" />
+        <remove id="Magento_Reports::report_statistics" />
+        <remove id="Mirasvit_SearchReport::search_report" />
+        <remove id="Magento_Reports::report_products_sold" />
+        <remove id="Magento_Reports::report_salesroot_tax" />
+        <remove id="Mirasvit_Dashboard::magento_dashboard" />
+        <remove id="Mirasvit_Dashboard::advanced_dashboard" />
+        <remove id="Magento_Reports::report_salesroot_sales" />
+        <remove id="Magento_Reports::report_products_viewed" />
+        <remove id="Magento_Analytics::business_intelligence" />
+        <remove id="Magento_Reports::report_shopcart_product" />
+        <remove id="Magento_Reports::report_customers_totals" />
+        <remove id="Magento_Reports::report_customers_orders" />
+        <remove id="Magento_Reports::report_products_lowstock" />
+        <remove id="Magento_Reports::report_salesroot_coupons" />
+        <remove id="Magento_Reports::report_customers_accounts" />
+        <remove id="Magento_Reports::report_statistics_refresh" />
+        <remove id="Magento_Reports::report_shopcart_abandoned" />
+        <remove id="Magento_Reports::report_salesroot_invoiced" />
+        <remove id="Magento_Reports::report_salesroot_refunded" />
+        <remove id="Magento_Reports::report_salesroot_shipping" />
+        <remove id="Magento_Reports::report_products_bestsellers" />
+
+        <!-- Updating the Reports section to add a new 'Reviews' item with a sort order of 999 -->
+        <update
+            id="Magento_Review::report_review"
+            module="Magento_Reports"
+            parent="Magento_Reports::report"
+            resource="Magento_Reports::review"
+            sortOrder="999"
+            title="Reviews"
+            translate="title"
+        />
+
+        <!-- Dashboard -->
+        <update
+            action="dashboard/dashboard/index"
+            id="Magento_Backend::dashboard"
+            module="Magento_Backend"
+            resource="Magento_Backend::dashboard"
+            sortOrder="10"
+            title="Dashboard"
+            translate="title"
+        />
+
+        <!-- ROOT REPORTS -->
+        <update
+            id="Magento_Reports::report"
+            module="Magento_Reports"
+            resource="Magento_Reports::report"
+            sortOrder="60"
+            title="Reports"
+            translate="title"
+        />
+
+        <!-- Overview -->
+        <update
+            id="Mirasvit_Reports::advanced_reports"
+            module="Mirasvit_Reports"
+            parent="Magento_Reports::report"
+            resource="Mirasvit_Reports::advanced_reports"
+            sortOrder="0"
+            title="Overview"
+        />
+        <update
+            action="dashboard/dashboard/index"
+            id="Mirasvit_Reports::dashboard_overview"
+            module="Mirasvit_Reports"
+            parent="Mirasvit_Reports::advanced_reports"
+            resource="Mirasvit_Reports::reports_view"
+            sortOrder="1"
+            title="Dashboard"
+        />
+        <update
+            action="reports/report/view/report/"
+            id="Mirasvit_Reports::reports"
+            module="Mirasvit_Reports"
+            parent="Mirasvit_Reports::advanced_reports"
+            resource="Mirasvit_Reports::reports_view"
+            sortOrder="2"
+            title="All Reports"
+        />
+        <update
+            action="report/email/index"
+            id="Mirasvit_Report::email"
+            module="Mirasvit_Report"
+            parent="Mirasvit_Reports::advanced_reports"
+            resource="Mirasvit_Report::email"
+            sortOrder="999"
+            title="Email Notifications"
+        />
+        <update
+            action="reportBuilder/config/index/"
+            id="Mirasvit_ReportBuilder::configBuilder"
+            module="Mirasvit_ReportBuilder"
+            parent="Mirasvit_Reports::advanced_reports"
+            resource="Mirasvit_ReportBuilder::configBuilder"
+            sortOrder="999"
+            title="Config Builder"
+        />
+
+        <!-- SALES REPORTS -->
+        <update
+            id="Maginium_Reports::report_salesroot"
+            module="Magento_Reports"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::report_salesroot"
+            sortOrder="10"
+            title="Sales"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_overview"
+            id="Maginium_Reports::report_salesroot_sales_overview"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_overview"
+            sortOrder="10"
+            title="Sales Overview"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_plain"
+            id="Maginium_Reports::report_salesroot_sales_orders"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_orders"
+            sortOrder="20"
+            title="Orders"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_hour"
+            id="Maginium_Reports::report_salesroot_sales_by_hour"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_hour"
+            sortOrder="30"
+            title="Sales by Hour"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_day"
+            id="Maginium_Reports::report_salesroot_sales_by_day"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_day"
+            sortOrder="40"
+            title="Sales by Day of Week"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_coupon"
+            id="Maginium_Reports::report_salesroot_sales_by_coupon"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_coupon"
+            sortOrder="50"
+            title="Sales by Coupon"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_pricerule"
+            id="Maginium_Reports::report_salesroot_sales_by_price_rule"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_price_rule"
+            sortOrder="60"
+            title="Sales by Cart Price Rules"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_geo"
+            id="Maginium_Reports::report_salesroot_sales_by_geo"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_geo"
+            sortOrder="70"
+            title="Sales by Geo-data"
+        />
+        <update
+            action="reports/report/view/report/order_paymenttype"
+            id="Maginium_Reports::report_salesroot_sales_by_payment_type"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_payment_type"
+            sortOrder="80"
+            title="Sales by Payment Type"
+        />
+        <update
+            action="reports/report/view/report/order_taxrate"
+            id="Maginium_Reports::report_salesroot_sales_by_tax_rule"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Maginium_Reports::report_salesroot_sales_by_tax_rule"
+            sortOrder="90"
+            title="Sales by Tax Rates"
+        />
+        <update
+            action="reports/report/view/report/credit_overview"
+            id="Maginium_Reports::store_credit_report_overview"
+            module="Mirasvit_Credit"
+            parent="Maginium_Reports::report_salesroot"
+            resource="Mirasvit_Credit::store_credit_report_overview"
+            sortOrder="100"
+            title="Store Credit"
+        />
+
+        <!-- PRODUCT REPORTS -->
+        <update
+            id="Maginium_Reports::report_products"
+            module="Magento_Reports"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::report_products"
+            sortOrder="20"
+            title="Products"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/catalog_product"
+            id="Maginium_Reports::report_products_product_performance"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_products"
+            resource="Maginium_Reports::report_products_product_performance"
+            sortOrder="10"
+            title="Product Performance"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/catalog_product"
+            id="Maginium_Reports::report_products_lowstock"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_products"
+            resource="Maginium_Reports::lowstock"
+            sortOrder="20"
+            title="Low Stock"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/catalog_category"
+            id="Maginium_Reports::report_products_by_category"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_products"
+            resource="Maginium_Reports::report_products_by_category"
+            sortOrder="30"
+            title="Sales by Category"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/catalog_attribute"
+            id="Maginium_Reports::report_products_by_attribute"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_products"
+            resource="Maginium_Reports::report_products_by_attribute"
+            sortOrder="40"
+            title="Sales by Attribute"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/catalog_attributeset"
+            id="Maginium_Reports::report_products_by_attribute_set"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_products"
+            resource="Maginium_Reports::report_products_by_attribute_set"
+            sortOrder="50"
+            title="Sales by Attribute Set"
+            translate="title"
+        />
+
+        <!-- CUSTOMERS REPORTS -->
+        <update
+            id="Maginium_Reports::report_customers"
+            module="Magento_Reports"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::customers"
+            sortOrder="30"
+            title="Customers"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_newvsreturningcustomer"
+            id="Maginium_Reports::report_customers_accounts"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_customers"
+            resource="Maginium_Reports::accounts"
+            sortOrder="10"
+            title="New vs Returning Customers"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_customer"
+            id="Maginium_Reports::report_customers_totals"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_customers"
+            resource="Maginium_Reports::totals"
+            sortOrder="20"
+            title="Sales by Customer"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/order_customergroup"
+            id="Maginium_Reports::report_customers_orders"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_customers"
+            resource="Maginium_Reports::customers_orders"
+            sortOrder="30"
+            title="Sales by Customer Group"
+            translate="title"
+        />
+        <update
+            action="reports/report/view"
+            id="Maginium_Reports::report_customers_segment"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_customers"
+            resource="Maginium_Reports::customers_segment"
+            sortOrder="40"
+            title="Sales by Segment"
+            translate="title"
+        />
+
+        <!-- MARKETING REPORTS -->
+        <update
+            id="Maginium_Reports::report_marketing"
+            module="Magento_Backend"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::report_marketing"
+            sortOrder="40"
+            title="Marketing"
+            translate="title"
+        />
+        <update
+            action="reports/report_shopcart/product"
+            id="Maginium_Reports::report_shopcart_product"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::product"
+            sortOrder="10"
+            title="Products in Cart"
+            translate="title"
+        />
+        <update
+            action="reports/report_shopcart/product"
+            id="Maginium_Reports::report_shopwishlist_product"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::product"
+            sortOrder="20"
+            title="Products in Wishlist"
+            translate="title"
+        />
+        <update
+            action="reports/report/view/report/rewards_overview"
+            id="Mirasvit_Rewards::reward_points_report_overview"
+            module="Mirasvit_Rewards"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::reward_points_report_overview"
+            sortOrder="30"
+            title="Reward Points"
+        />
+
+        <!-- ABANDONED CART REPORTS -->
+        <update
+            action="reports/report/view/report/cart_overview"
+            id="Maginium_Reports::report_shopcart_abandoned_overview"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::abandoned"
+            sortOrder="50"
+            title="Abandoned Carts Overview"
+            translate="title"
+        />
+        <update
+            action="report/view/report/cart_abandoned"
+            id="Maginium_Reports::report_shopcart_abandoned"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::report_shopcart_abandoned_overview"
+            sortOrder="40"
+            title="Abandoned Carts"
+            translate="title"
+        />
+        <update
+            action="report/view/report/cart_product"
+            id="Maginium_Reports::report_shopcart_abandoned_products"
+            module="Magento_Reports"
+            parent="Maginium_Reports::report_marketing"
+            resource="Maginium_Reports::report_shopcart_abandoned_product"
+            sortOrder="50"
+            title="Abandoned Products"
+            translate="title"
+        />
+
+        <!-- SEARCH REPORTS -->
+        <update
+            id="Maginium_Reports::report_search"
+            module="Magento_Backend"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::report_search"
+            sortOrder="50"
+            title="Search"
+            translate="title"
+        />
+        <update
+            action="searchReport/report/view/report/search_report_query"
+            id="Magento_Search::report_search_term"
+            module="Magento_Search"
+            parent="Maginium_Reports::report_search"
+            resource="Maginium_Reports::report_search"
+            sortOrder="10"
+            title="Search Terms"
+            translate="title"
+        />
+        <update
+            action="searchReport/report/view/report/search_report_volume"
+            id="Magento_Search::report_search_volume"
+            module="Magento_Search"
+            parent="Maginium_Reports::report_search"
+            resource="Maginium_Reports::report_search_volume"
+            sortOrder="20"
+            title="Search Vloume"
+            translate="title"
+        />
+
+        <!-- FEED REPORTS -->
+        <update
+            id="Maginium_Reports::feed_report"
+            module="Mirasvit_Feed"
+            parent="Magento_Reports::report"
+            resource="Maginium_Reports::feed_report"
+            sortOrder="60"
+            title="Feed"
+        />
+        <update
+            action="reports/report/view/report/feed_overview"
+            id="Maginium_Reports::feed_report_overview"
+            module="Mirasvit_Feed"
+            parent="Maginium_Reports::feed_report"
+            resource="Maginium_Reports::feed_report_overview"
+            sortOrder="10"
+            title="Feed"
+        />
+    </menu>
+</config>

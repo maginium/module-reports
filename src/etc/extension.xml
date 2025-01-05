@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<extensions
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Maginium_Foundation:etc/extensions.xsd"
+>
+    <extension>
+        <!-- Extension name attribute -->
+        <name>Maginium_Report</name>
+
+        <!-- Extension title attribute -->
+        <title>Report Module</title>
+
+        <!-- Extension config section attribute -->
+        <config_section>report</config_section>
+
+        <!-- Path for enabling the extension -->
+        <is_enabled_path>report/general/enabled</is_enabled_path>
+
+        <!-- Documentation URL for the extension -->
+        <documentation>https://www.maginium.com/docs/report-module</documentation>
+
+        <!-- URL for the extension's page -->
+        <url>https://www.maginium.com/extensions/report</url>
+
+        <!-- URL for the extension's marketplace page -->
+        <marketplace_url>https://marketplace.magento.com/maginium-report.html</marketplace_url>
+    </extension>
+</extensions>

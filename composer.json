@@ -1,0 +1,92 @@
+{
+  "name": "maginium/module-reports",
+  "description": "Maginium Reports module for Magento 2. Provides advanced reporting and analytics for backend management.",
+  "type": "magento2-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Maginium",
+      "role": "Technical Support",
+      "email": "support@maginium.com",
+      "homepage": "https://www.maginium.com"
+    }
+  ],
+  "homepage": "https://www.maginium.com",
+  "support": {
+    "issues": "https://www.maginium.com/issues",
+    "source": "https://github.com/maginium/module-reports",
+    "email": "support@maginium.com",
+    "docs": "https://docs.maginium.com/reports"
+  },
+  "keywords": [
+    "reports",
+    "magento",
+    "magento2",
+    "maginium",
+    "ecommerce",
+    "analytics",
+    "management"
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=8.2",
+    "mirasvit/module-reports": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.3",
+    "mockery/mockery": "^1.5",
+    "laravel/pint": "^1.13",
+    "phpstan/phpstan": "^1.10",
+    "symplify/monorepo-builder": "^11.4",
+    "friendsofphp/php-cs-fixer": "^3.19"
+  },
+  "autoload": {
+    "files": [
+      "src/registration.php"
+    ],
+    "psr-4": {
+      "Maginium\\Reports\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Maginium\\Reports\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [],
+    "post-update-cmd": [],
+    "lint": [
+      "php-cs-fixer fix --dry-run",
+      "phpstan analyse"
+    ],
+    "fix": [
+      "php-cs-fixer fix"
+    ],
+    "test": [
+      "phpunit --stop-on-failure"
+    ]
+  },
+  "extra": {
+    "magento-version": ">=2.4",
+    "classmap-authoritative": true,
+    "patches": {
+      "magento/framework": {}
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.github",
+      "/.gitignore",
+      "/composer.lock",
+      "/phpunit.xml"
+    ]
+  }
+}
