@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Maginium\Reports\Setup\Patch\Data;
 
-use Mirasvit\Dashboard\Model\Board;
+use Maginium\Framework\Database\Model;
+use Maginium\Framework\Database\Setup\Seeder\Context;
 use Maginium\Framework\Database\Setup\Seeder\Seeder;
 use Maginium\Framework\Support\DataObject;
 use Maginium\Framework\Support\Debug\ConsoleOutput;
 use Maginium\Framework\Support\Facades\Log;
 use Maginium\Reports\Factories\ReportFactory;
+use Mirasvit\Dashboard\Model\Board;
 
 /**
  * Seeder for creating board records in the database.
@@ -33,7 +35,7 @@ class ReportSeeder extends Seeder
      *
      * @var class-string<Model>
      */
-    protected $model = Board::class;
+    protected string $model = Board::class;
 
     /**
      * @var ReportFactory The factory instance for creating default board.
@@ -46,7 +48,7 @@ class ReportSeeder extends Seeder
      * @param Seeder\Context $context The context object that provides necessary services.
      */
     public function __construct(
-        Seeder\Context $context,
+        Context $context,
         ReportFactory $reportFactory,
     ) {
         $this->reportFactory = $reportFactory;
