@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Maginium\Reports\Setup\Patch\Data;
 
-use Maginium\Framework\Database\Model;
+use Maginium\Framework\Database\Eloquent\Model;
 use Maginium\Framework\Database\Setup\Seeder\Context;
 use Maginium\Framework\Database\Setup\Seeder\Seeder;
 use Maginium\Framework\Support\DataObject;
